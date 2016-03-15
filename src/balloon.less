@@ -52,7 +52,7 @@
             transition: @args;
 }
 
-.transform (@val) {
+.transform(@val) {
     -webkit-transform: @val;
         -ms-transform: @val;
             transform: @val;
@@ -119,12 +119,6 @@
             .transform(translate3d(-50%, 0, 0));
         }
     }
-
-    &[data-balloon-break] {
-        &:before {
-            white-space: normal;
-        }
-    }
 }
 
 [data-balloon-pos="down"] {
@@ -135,9 +129,7 @@
         top: 100%;
         .transform(translate3d(-50%, -10px, 0));
     }
-    &:before {
-        margin-top: @balloon-arrow-size + 5;
-    }
+    &:before { margin-top: @balloon-arrow-size + 5; }
     &:after {
         .svg-arrow(@balloon-bg, down);
         margin-top: @balloon-arrow-size - 1;
@@ -158,9 +150,7 @@
         top: 50%;
         .transform(translate3d(10px, -50%, 0));
     }
-    &:before {
-        margin-right: @balloon-arrow-size + 5;
-    }
+    &:before { margin-right: @balloon-arrow-size + 5; }
     &:after {
         .svg-arrow(@balloon-bg, left);
         margin-right: @balloon-arrow-size - 1;
@@ -180,9 +170,7 @@
         top: 50%;
         .transform(translate3d(-10px, -50%, 0));
     }
-    &:before {
-        margin-left: @balloon-arrow-size + 5;
-    }
+    &:before { margin-left: @balloon-arrow-size + 5; }
     &:after {
         .svg-arrow(@balloon-bg, right);
         margin-bottom: 0;
@@ -192,6 +180,10 @@
         &:before,
         &:after { .transform(translate3d(0, -50%, 0)); }
     }
+}
+
+[data-balloon-break] {
+    &:before { white-space: normal; }
 }
 
 :before {
